@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第一章 课后作业 - 详细解析</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #fff;
+            color: #222;
+            line-height: 1.9;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        h1 {
+            font-size: 1.8em;
+            border-bottom: 2px solid #222;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            font-size: 1.3em;
+            color: #555;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 6px;
+            margin: 30px 0 20px;
+        }
+        .q {
+            margin-bottom: 36px;
+        }
+        .q-title {
+            font-weight: 700;
+            font-size: 1.05em;
+            margin-bottom: 10px;
+        }
+        .q-num {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background: #222;
+            color: #fff;
+            text-align: center;
+            line-height: 24px;
+            border-radius: 3px;
+            font-size: 0.8em;
+            margin-right: 8px;
+        }
+        .opts { margin: 8px 0 12px 24px; }
+        .opt { padding: 4px 0; }
+        .opt.c { color: #1a7f37; font-weight: 700; }
+        .opt.c::before { content: "✓ "; }
+        .opt.w { color: #999; }
+        .ans {
+            background: #f6f6f6;
+            border-left: 3px solid #222;
+            padding: 10px 14px;
+            margin: 10px 0;
+            font-weight: 700;
+        }
+        .exp {
+            color: #444;
+            margin: 10px 0;
+            padding-left: 14px;
+            border-left: 2px solid #ddd;
+        }
+        .exp p { margin: 8px 0; }
+        .exp strong { color: #222; }
+        .exp code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.95em;
+        }
+        .box {
+            background: #f6f6f6;
+            padding: 12px 14px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        .box-key {
+            border-left: 3px solid #d00;
+        }
+        .box-analogy {
+            border-left: 3px solid #e8a500;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0;
+            font-size: 0.95em;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px 10px;
+            text-align: left;
+        }
+        th { background: #f6f6f6; font-weight: 700; }
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            color: #999;
+            font-size: 0.85em;
+        }
+    </style>
+</head>
+<body>
+
+<h1>第一章 课后作业 详细解析</h1>
+
+<h2>一、多选题</h2>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">1</span>关于准平衡过程，描述正确的是：</div>
+    <div class="opts">
+        <div class="opt c">A. 过程进行地无限缓慢，无限接近一系列平衡状态。</div>
+        <div class="opt c">B. 优点之一是热力系中状态参数均匀，方便描述。</div>
+        <div class="opt c">C. 是理想化的过程，实际中不存在。</div>
+        <div class="opt c">D. 其轨迹可在状态参数坐标图上用实线画出。</div>
+    </div>
+    <div class="ans">答案：A、B、C、D（全选）</div>
+    <div class="exp">
+        <p><strong>准平衡过程</strong>是热力学中最基础的概念。理解它需要先知道"平衡状态"——系统内部各处温度、压力完全均匀且不随时间变化的状态。</p>
+        <p>准平衡过程要求过程进行得<strong>无限缓慢</strong>，使得系统在每一瞬间都有足够时间达到内部平衡。这样每一刻都有确定的状态参数，可以用一组数值描述整个系统。</p>
+        <div class="box box-analogy">推箱子的类比：推得极慢极慢，箱子每时每刻都几乎处于平衡（推力≈摩擦力），这就是准平衡。猛推一把，箱子剧烈加速，内部受力不均匀，就不是准平衡。</div>
+        <p>A正确——定义本身。B正确——每一刻状态参数均匀，这是最大的实用价值。C正确——真实过程不可能无限缓慢，只能近似。D正确——每一刻都有确定参数值，可以连成实线。</p>
+        <div class="box box-key">准平衡过程中才能用 <code>W = ∫pdV</code> 计算膨胀功，因为只有准平衡才能用一个确定的p。</div>
+    </div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">2</span>状态参数的数学特征包括：</div>
+    <div class="opts">
+        <div class="opt c">A. 它的变化量与路径无关，只与初终态有关。</div>
+        <div class="opt c">B. 它是点函数。</div>
+        <div class="opt c">C. 它的微元变量为全微分。</div>
+        <div class="opt c">D. 它的循环积分为零。</div>
+    </div>
+    <div class="ans">答案：A、B、C、D（全选）</div>
+    <div class="exp">
+        <p><strong>状态参数</strong>（温度T、压力p、体积V、内能U等）只取决于系统当前状态，与达到这个状态的过程无关。</p>
+        <div class="box box-analogy">你站在海拔1000米的山顶——不管你爬上来、坐缆车、还是直升机空投，你的海拔就是1000米。海拔是状态参数。而你走过的路程是过程量，取决于路径。</div>
+        <p>四个特征是<strong>同一件事的四种说法</strong>：变化量与路径无关 ↔ 点函数 ↔ 全微分dX ↔ 循环积分∮dX=0。满足一个必然满足其他三个。</p>
+        <table>
+            <tr><th>特征</th><th>状态参数(T,p,V,U)</th><th>过程量(Q,W)</th></tr>
+            <tr><td>变化量与路径</td><td>无关</td><td>有关</td></tr>
+            <tr><td>微分符号</td><td>全微分 dX</td><td>不完全微分 δX</td></tr>
+            <tr><td>循环积分</td><td>= 0</td><td>≠ 0</td></tr>
+        </table>
+    </div>
+</div>
+
+<h2>二、单选题</h2>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">3</span>电动机实现的能量转化形式是：</div>
+    <div class="opts">
+        <div class="opt w">A. 机械能转化为电能</div>
+        <div class="opt c">B. 电能转化为机械能</div>
+        <div class="opt w">C. 热能转化为机械能</div>
+        <div class="opt w">D. 机械能转化为热能</div>
+    </div>
+    <div class="ans">答案：B</div>
+    <div class="exp">
+        <p>电动机（Motor）= 电能 → 机械能。电风扇、电动车都是例子。A是发电机，C是热机，D是摩擦生热。</p>
+    </div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">4</span>与外界无物质交换，但可以存在其他作用的热力系叫什么？</div>
+    <div class="opts">
+        <div class="opt w">A. 孤立系</div>
+        <div class="opt w">B. 开口系</div>
+        <div class="opt w">C. 绝热系</div>
+        <div class="opt c">D. 闭口系</div>
+    </div>
+    <div class="ans">答案：D</div>
+    <div class="exp">
+        <p><strong>闭口系</strong>：无物质交换，可有热量和功的交换（如密封气缸）。</p>
+        <p>孤立系什么交换都没有；开口系有物质交换；绝热系无热量交换。题目强调"无物质交换+可有其他作用"，正是闭口系。</p>
+    </div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">5</span>热力系与外界之间的相互作用有三种，不包含下面哪种？</div>
+    <div class="opts">
+        <div class="opt w">A. 热量交换</div>
+        <div class="opt w">B. 物质交换</div>
+        <div class="opt w">C. 做功</div>
+        <div class="opt c">D. 动量交换</div>
+    </div>
+    <div class="ans">答案：D</div>
+    <div class="exp">
+        <p>热力学三大相互作用：热量交换Q、做功W、物质交换。没有动量交换。</p>
+    </div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">6</span>热力系某一个状态参数发生变化，则热力系的状态：</div>
+    <div class="opts">
+        <div class="opt w">A. 可能变可能不变，取决于其他状态参数。</div>
+        <div class="opt w">B. 必然不变。</div>
+        <div class="opt c">C. 必然发生变化。</div>
+        <div class="opt w">D. 状态可能变可能不变，但不取决于其他状态参数。</div>
+    </div>
+    <div class="ans">答案：C</div>
+    <div class="exp">
+        <p>系统的状态由所有状态参数共同确定，一一对应。任何一个参数变了，状态必然变了。</p>
+    </div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">7</span>热力系经历一个过程后，其状态参数：</div>
+    <div class="opts">
+        <div class="opt w">A. 必然发生变化。</div>
+        <div class="opt w">B. 必然不变。</div>
+        <div class="opt c">C. 变与不变都有可能，变化量取决于过程的起点和终点。</div>
+        <div class="opt w">D. 变与不变都有可能，变化量取决于过程的整个路径。</div>
+    </div>
+    <div class="ans">答案：C</div>
+    <div class="exp">
+        <p>状态参数变化量只取决于初态和终态。初态≠终态则变化，初态=终态（循环）则不变。D说的是过程量的特征。</p>
+    </div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">8</span>关于绝热系的描述，正确的是：</div>
+    <div class="opts">
+        <div class="opt w">A. 绝热系必然是孤立系。</div>
+        <div class="opt c">B. 孤立系必然是绝热系。</div>
+        <div class="opt w">C. 绝热系必然是闭口系。</div>
+        <div class="opt w">D. 闭口系必然是绝热系。</div>
+    </div>
+    <div class="ans">答案：B</div>
+    <div class="exp">
+        <p>孤立系什么交换都没有，自然也没有热量交换，所以一定是绝热系。集合关系：孤立系 ⊂ 绝热系。</p>
+        <p>反过来说不通：绝热系只封了热量通道，功和物质通道可能还开着。</p>
+    </div>
+</div>
+
+<h2>三、填空题</h2>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">9</span>能源利用的三个时期分别是___时期、___时期、___时期。</div>
+    <div class="ans">答案：柴草时期、煤炭时期、石油时期</div>
+    <div class="exp">
+        <p>口诀：<strong>柴煤油</strong>。柴草时期（远古~18世纪中叶）→ 煤炭时期（工业革命）→ 石油时期（20世纪至今）。</p>
+    </div>
+</div>
+
+<h2>四、判断题</h2>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">10</span>工质的状态参数不随时间而变化的状态称为平衡状态。</div>
+    <div class="opts">
+        <div class="opt c">A. 对</div>
+        <div class="opt w">B. 错</div>
+    </div>
+    <div class="ans">答案：A（对）</div>
+    <div class="exp">
+        <p>平衡状态的核心特征就是状态参数不随时间变化。注意平衡是<strong>动态平衡</strong>——微观分子仍在运动，只是宏观不变。</p>
+    </div>
+</div>
+
+<footer>热工基础 · 第一章 · 共10题</footer>
+
+</body>
+</html>

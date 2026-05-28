@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第四、五章 理想气体与水蒸气 - 详细解析</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #fff; color: #222; line-height: 1.9; max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        h1 { font-size: 1.8em; border-bottom: 2px solid #222; padding-bottom: 10px; margin-bottom: 30px; }
+        h2 { font-size: 1.3em; color: #555; border-bottom: 1px solid #ddd; padding-bottom: 6px; margin: 30px 0 20px; }
+        .q { margin-bottom: 28px; }
+        .q-title { font-weight: 700; font-size: 1.02em; margin-bottom: 8px; }
+        .q-num { display: inline-block; min-width: 24px; height: 24px; background: #222; color: #fff; text-align: center; line-height: 24px; border-radius: 3px; font-size: 0.8em; margin-right: 8px; }
+        .opts { margin: 6px 0 10px 24px; }
+        .opt { padding: 3px 0; }
+        .opt.c { color: #1a7f37; font-weight: 700; }
+        .opt.c::before { content: "✓ "; }
+        .opt.w { color: #999; }
+        .ans { background: #f6f6f6; border-left: 3px solid #222; padding: 8px 14px; margin: 8px 0; font-weight: 700; font-size: 0.95em; }
+        .exp { color: #444; margin: 8px 0; padding-left: 14px; border-left: 2px solid #ddd; font-size: 0.95em; }
+        .exp p { margin: 6px 0; }
+        .exp strong { color: #222; }
+        .exp code { background: #f0f0f0; padding: 2px 6px; border-radius: 3px; }
+        .box { background: #f6f6f6; padding: 10px 14px; margin: 8px 0; border-radius: 4px; font-size: 0.95em; }
+        .box-key { border-left: 3px solid #d00; }
+        .formula { background: #f0f0f0; padding: 10px 14px; margin: 8px 0; border-radius: 4px; font-family: monospace; font-size: 0.95em; }
+        table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 0.9em; }
+        th, td { border: 1px solid #ddd; padding: 6px 10px; text-align: left; }
+        th { background: #f6f6f6; font-weight: 700; }
+        footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; color: #999; font-size: 0.85em; }
+    </style>
+</head>
+<body>
+
+<h1>第四、五章 理想气体与水蒸气 详细解析</h1>
+
+<h2>一、单选题（10题）</h2>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">1</span>下面哪些工质可以按理想气体处理？</div>
+    <div class="opts">
+        <div class="opt w">A. 制冷设备中的工质</div>
+        <div class="opt w">B. 蒸汽轮机中的工质</div>
+        <div class="opt c">C. 内燃机中的工质</div>
+        <div class="opt w">D. 压力很高时的氮气</div>
+    </div>
+    <div class="ans">答案：C</div>
+    <div class="exp">内燃机高温燃气（2000K+）可按理想气体处理。制冷剂有相变，水蒸气接近饱和，高压气体偏离理想气体。</div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">2</span>在T-s图上，某熵增加的理想气体可逆过程线下的面积表示：</div>
+    <div class="opts">
+        <div class="opt w">A. 放出的热量</div>
+        <div class="opt w">B. 对外作的功量</div>
+        <div class="opt w">C. 消耗的外界功量</div>
+        <div class="opt c">D. 吸收的热量</div>
+    </div>
+    <div class="ans">答案：D</div>
+    <div class="exp">T-s图下面积=热量。熵增→吸热，熵减→放热。p-V图下面积=功。</div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">3</span>理想气体的比热容满足以下哪个特性？</div>
+    <div class="opts">
+        <div class="opt w">A. cv随体积变化，cp随压力变化</div>
+        <div class="opt w">B. 随温度和压力变化</div>
+        <div class="opt w">C. cp不一定比cv大</div>
+        <div class="opt c">D. 只是温度的单值函数</div>
+    </div>
+    <div class="ans">答案：D</div>
+    <div class="exp">理想气体比热容只是温度的函数。迈耶公式 cp-cv=Rg>0，所以cp一定大于cv。</div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">4</span>理想气体可逆吸热过程，下列哪个参数一定增加？</div>
+    <div class="opts">
+        <div class="opt c">A. 熵</div>
+        <div class="opt w">B. 热力学能</div>
+        <div class="opt w">C. 温度</div>
+        <div class="opt w">D. 压力</div>
+    </div>
+    <div class="ans">答案：A</div>
+    <div class="exp">可逆吸热 ds=δq/T>0 → 熵一定增加。其他参数不一定（如等温膨胀温度不变）。</div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">5</span>理想混合气体的压力等于各组分分压力的：</div>
+    <div class="opts">
+        <div class="opt w">A. 之乘积</div>
+        <div class="opt c">B. 之和</div>
+        <div class="opt w">C. 之差</div>
+        <div class="opt w">D. 之中最大的一个</div>
+    </div>
+    <div class="ans">答案：B</div>
+    <div class="exp">道尔顿分压定律：p = p₁+p₂+p₃+... = Σpi</div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">6</span>水蒸气的干度被定义为：</div>
+    <div class="opts">
+        <div class="opt w">A. 饱和水质量/湿蒸汽质量</div>
+        <div class="opt c">B. 干蒸汽质量/湿蒸汽质量</div>
+        <div class="opt w">C. 干蒸汽质量/饱和水质量</div>
+        <div class="opt w">D. 饱和水质量/干蒸汽质量</div>
+    </div>
+    <div class="ans">答案：B</div>
+    <div class="exp">干度 x = mg/(mg+mf)。x=0全液，x=1全汽，0<x<1湿蒸汽。</div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">7</span>水三相共存点的热力学温度为：</div>
+    <div class="opts">
+        <div class="opt w">A. 0K</div>
+        <div class="opt w">B. 273.15K</div>
+        <div class="opt c">C. 273.16K</div>
+        <div class="opt w">D. 674.14K</div>
+    </div>
+    <div class="ans">答案：C</div>
+    <div class="exp">三相点=273.16K=0.01°C。冰点=273.15K=0°C。两者差0.01K。</div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">8</span>不需要介质就能传递热量的方式是：</div>
+    <div class="opts">
+        <div class="opt w">A. 热传导</div>
+        <div class="opt w">B. 热对流</div>
+        <div class="opt c">C. 热辐射</div>
+        <div class="opt w">D. 对流换热</div>
+    </div>
+    <div class="ans">答案：C</div>
+    <div class="exp">热辐射通过电磁波传播，不需要介质。太阳热量穿越真空传到地球就是例子。</div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">9</span>下列______的温度与压力是相互独立的。</div>
+    <div class="opts">
+        <div class="opt c">A. 过冷水</div>
+        <div class="opt w">B. 饱和水</div>
+        <div class="opt w">C. 湿蒸汽</div>
+        <div class="opt w">D. 饱和蒸汽</div>
+    </div>
+    <div class="ans">答案：A</div>
+    <div class="exp">饱和状态（饱和水、湿蒸汽、饱和蒸汽）的T和p一一对应，不独立。过冷水和过热蒸汽的T和p独立。</div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">10</span>下列______的温度与压力是相互独立的。</div>
+    <div class="opts">
+        <div class="opt w">A. 饱和水</div>
+        <div class="opt w">B. 湿蒸汽</div>
+        <div class="opt w">C. 饱和蒸汽</div>
+        <div class="opt c">D. 过热蒸汽</div>
+    </div>
+    <div class="ans">答案：D</div>
+    <div class="exp">过热蒸汽的T和p独立。</div>
+</div>
+
+<h2>二、判断题（18题）</h2>
+
+<div class="q"><div class="q-title"><span class="q-num">11</span>空气通常可以作为理想气体看待。</div>
+    <div class="opts"><div class="opt c">A. 对</div><div class="opt w">B. 错</div></div>
+    <div class="ans">答案：A（对）</div>
+    <div class="exp">常温常压下空气可视为理想气体。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">12</span>遵循克拉贝龙状态方程的气体就是理想气体。</div>
+    <div class="opts"><div class="opt w">A. 对</div><div class="opt c">B. 错</div></div>
+    <div class="ans">答案：B（错）</div>
+    <div class="exp">克拉贝龙方程是必要条件但不是充分条件。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">13</span>定容比热容cv是指定容条件下温度升高1K时焓的增加量。</div>
+    <div class="opts"><div class="opt w">A. 对</div><div class="opt c">B. 错</div></div>
+    <div class="ans">答案：B（错）</div>
+    <div class="exp">cv是<strong>内能</strong>变化量，不是焓。cp才是焓变化量。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">14</span>已知cv，通过迈耶公式可以计算出cp。</div>
+    <div class="opts"><div class="opt c">A. 对</div><div class="opt w">B. 错</div></div>
+    <div class="ans">答案：A（对）</div>
+    <div class="exp">迈耶公式：cp = cv + Rg。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">15</span>理想气体的热力学能与压力比体积有关。</div>
+    <div class="opts"><div class="opt w">A. 对</div><div class="opt c">B. 错</div></div>
+    <div class="ans">答案：B（错）</div>
+    <div class="exp">理想气体内能只是温度的函数 u=u(T)。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">16</span>du=cvdT和dh=cpdT均适用于理想气体和实际气体的任何过程。</div>
+    <div class="opts"><div class="opt w">A. 对</div><div class="opt c">B. 错</div></div>
+    <div class="ans">答案：B（错）</div>
+    <div class="exp">只适用于理想气体，不适用于实际气体。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">17</span>平衡状态下，理想气体混合物也遵守理想气体状态方程。</div>
+    <div class="opts"><div class="opt c">A. 对</div><div class="opt w">B. 错</div></div>
+    <div class="ans">答案：A（对）</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">18</span>定容过程即无膨胀功的过程。</div>
+    <div class="opts"><div class="opt c">A. 对</div><div class="opt w">B. 错</div></div>
+    <div class="ans">答案：A（对）</div>
+    <div class="exp">dv=0 → W=∫pdv=0。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">19</span>绝热过程即定熵过程。</div>
+    <div class="opts"><div class="opt w">A. 对</div><div class="opt c">B. 错</div></div>
+    <div class="ans">答案：B（错）</div>
+    <div class="exp">只有<strong>可逆</strong>绝热才是定熵。不可逆绝热熵会增加。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">20</span>压力越大，水的饱和温度越高。</div>
+    <div class="opts"><div class="opt c">A. 对</div><div class="opt w">B. 错</div></div>
+    <div class="ans">答案：A（对）</div>
+    <div class="exp">高压锅原理：压力↑→饱和温度↑。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">21</span>空气通常可以作为理想气体看待。（重复）</div>
+    <div class="opts"><div class="opt c">A. 对</div><div class="opt w">B. 错</div></div>
+    <div class="ans">答案：A（对）</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">22</span>遵循克拉贝龙方程的气体就是理想气体。（重复）</div>
+    <div class="opts"><div class="opt w">A. 对</div><div class="opt c">B. 错</div></div>
+    <div class="ans">答案：B（错）</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">23</span>定容过程即无膨胀功的过程。（重复）</div>
+    <div class="opts"><div class="opt c">A. 对</div><div class="opt w">B. 错</div></div>
+    <div class="ans">答案：A（对）</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">24</span>cv是指定容条件下温度升高1K时焓的增加量。（重复）</div>
+    <div class="opts"><div class="opt w">A. 对</div><div class="opt c">B. 错</div></div>
+    <div class="ans">答案：B（错）</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">25</span>cp是指定压条件下温度升高1K时焓的增加量。</div>
+    <div class="opts"><div class="opt c">A. 对</div><div class="opt w">B. 错</div></div>
+    <div class="ans">答案：A（对）</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">26</span>借助饱和水和饱和蒸汽表可以求出干度为x的湿蒸汽的状态参数。</div>
+    <div class="opts"><div class="opt c">A. 对</div><div class="opt w">B. 错</div></div>
+    <div class="ans">答案：A（对）</div>
+    <div class="exp">公式：h = hf + x·hfg，s = sf + x·sfg，v = vf + x·vfg。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">27</span>利用饱和水蒸气表可以直接查出比热力学能。</div>
+    <div class="opts"><div class="opt w">A. 对</div><div class="opt c">B. 错</div></div>
+    <div class="ans">答案：B（错）</div>
+    <div class="exp">表中不直接列u，需用 u = h - pv 计算。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">28</span>理想气体的定熵过程是一绝热过程。</div>
+    <div class="opts"><div class="opt c">A. 对</div><div class="opt w">B. 错</div></div>
+    <div class="ans">答案：A（对）</div>
+    <div class="exp">定熵ds=0 → δq=0 → 绝热。</div>
+</div>
+
+<h2>三、计算题（2题）</h2>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">29</span>m=2.26kg理想气体，Rg=430J/(kg·K)，k=1.35。T₁=477K经可逆定容到T₂=591K。求Q、ΔU、W、ΔS。</div>
+    <div class="ans">答案：Q=317.7kJ，ΔU=317.7kJ，W=0，ΔS=0.594kJ/K</div>
+    <div class="exp">
+        <div class="formula">求比热容：
+cp-cv=Rg=430, cp=1.35cv → 0.35cv=430 → cv=1228.57 J/(kg·K)
+
+定容过程：W = 0
+ΔU = m·cv·(T₂-T₁) = 2.26×1228.57×114 = 317,727 J = 317.7 kJ
+Q = ΔU + W = 317.7 + 0 = 317.7 kJ
+ΔS = m·cv·ln(T₂/T₁) = 2.26×1228.57×ln(591/477) = 594 J/K = 0.594 kJ/K</div>
+    </div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">30</span>储气罐V=0.045m³，装有5bar/20°C的氧气。阀门10bar开启、8bar关闭。求：(1)Rg (2)阀门开启时温度和质量 (3)失掉多少氧气。</div>
+    <div class="ans">答案：(1) Rg=259.8J/(kg·K) (2) T=586K=313°C, m=296g (3) 失掉约59g</div>
+    <div class="exp">
+        <div class="formula">(1) Rg = R/M = 8314/32 = 259.8 J/(kg·K)
+
+(2) 等容过程：T₂ = T₁×(p₂/p₁) = 293×(10/5) = 586 K = 313°C
+    m₁ = p₁V/(RgT₁) = (500×0.045)/(259.8×293) = 22.5/76121 = 0.296 kg = 296 g
+
+(3) 排气后（等温等容）：
+    m₃ = p₃V/(RgT₃) = (800×0.045)/(259.8×586) = 36/152243 = 0.237 kg = 237 g
+    失掉：Δm = 296 - 237 = 59 g</div>
+    </div>
+</div>
+
+<footer>热工基础 · 第四、五章 · 共30题</footer>
+
+</body>
+</html>

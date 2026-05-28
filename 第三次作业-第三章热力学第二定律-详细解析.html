@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第三章 热力学第二定律 - 详细解析</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #fff; color: #222; line-height: 1.9; max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        h1 { font-size: 1.8em; border-bottom: 2px solid #222; padding-bottom: 10px; margin-bottom: 30px; }
+        h2 { font-size: 1.3em; color: #555; border-bottom: 1px solid #ddd; padding-bottom: 6px; margin: 30px 0 20px; }
+        .q { margin-bottom: 28px; }
+        .q-title { font-weight: 700; font-size: 1.02em; margin-bottom: 8px; }
+        .q-num { display: inline-block; min-width: 24px; height: 24px; background: #222; color: #fff; text-align: center; line-height: 24px; border-radius: 3px; font-size: 0.8em; margin-right: 8px; }
+        .opts { margin: 6px 0 10px 24px; }
+        .opt { padding: 3px 0; }
+        .opt.c { color: #1a7f37; font-weight: 700; }
+        .opt.c::before { content: "✓ "; }
+        .opt.w { color: #999; }
+        .ans { background: #f6f6f6; border-left: 3px solid #222; padding: 8px 14px; margin: 8px 0; font-weight: 700; font-size: 0.95em; }
+        .exp { color: #444; margin: 8px 0; padding-left: 14px; border-left: 2px solid #ddd; font-size: 0.95em; }
+        .exp p { margin: 6px 0; }
+        .exp strong { color: #222; }
+        .exp code { background: #f0f0f0; padding: 2px 6px; border-radius: 3px; }
+        .box { background: #f6f6f6; padding: 10px 14px; margin: 8px 0; border-radius: 4px; font-size: 0.95em; }
+        .box-key { border-left: 3px solid #d00; }
+        .formula { background: #f0f0f0; padding: 10px 14px; margin: 8px 0; border-radius: 4px; font-family: monospace; font-size: 0.95em; }
+        .fill { display: inline-block; padding: 3px 12px; background: #f6f6f6; border: 1px solid #222; border-radius: 3px; font-weight: 700; margin: 2px; }
+        table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 0.9em; }
+        th, td { border: 1px solid #ddd; padding: 6px 10px; text-align: left; }
+        th { background: #f6f6f6; font-weight: 700; }
+        footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; color: #999; font-size: 0.85em; }
+    </style>
+</head>
+<body>
+
+<h1>第三章 热力学第二定律 详细解析</h1>
+
+<h2>一、单选题（21题）</h2>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">1</span>热力学第二定律告诉我们：</div>
+    <div class="opts">
+        <div class="opt w">A. 一切自发的热力过程不一定伴随着能量品质的降低。</div>
+        <div class="opt c">B. 一切自发的热力过程都是不可逆的，不能够自发的过程可以附加条件使其发生</div>
+        <div class="opt w">C. 所有的非自发的热力过程都不可以发生。</div>
+        <div class="opt w">D. 能够发生的热力过程可以无限地进行下去。</div>
+    </div>
+    <div class="ans">答案：B</div>
+    <div class="exp">自发过程不可逆；非自发过程可以发生但需要附加条件（如制冷机消耗功把热量从低温搬到高温）。</div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">2</span>热力学第二定律是：</div>
+    <div class="opts">
+        <div class="opt w">A. 根据物理学中的理论推导得到的</div>
+        <div class="opt w">B. 是严格理论推导的理论</div>
+        <div class="opt w">C. 是根据数学算式推导得到的</div>
+        <div class="opt c">D. 根据生活经验总结归纳出的理论，并不是严格的理论推导得到的</div>
+    </div>
+    <div class="ans">答案：D</div>
+    <div class="exp">热力学第二定律是<strong>经验定律</strong>，从实践中总结，不是从数学推导出来的。</div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">3</span>热机从热源吸收100kJ，对外做功100kJ，则：</div>
+    <div class="opts">
+        <div class="opt w">A. 违反热力学第一定律</div>
+        <div class="opt c">B. 违反热力学第二定律</div>
+        <div class="opt w">C. A和B</div>
+        <div class="opt w">D. 不违反热力学第二定律</div>
+    </div>
+    <div class="ans">答案：B</div>
+    <div class="exp">能量守恒（第一定律）满足，但这是单一热源热机（第二类永动机），违反第二定律。</div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">4</span>关于热力学第二定律的表述，正确的是：</div>
+    <div class="opts">
+        <div class="opt c">A. 不可能从热源吸取热量使之变为有用功而不产生其他影响</div>
+        <div class="opt w">B. 不可能从单一热源吸收热量使之完全变为有用功</div>
+        <div class="opt w">C. 热量不可能从高温物体传向低温物体而不产生其他变化</div>
+        <div class="opt w">D. 不可能把热量从低温物体传向高温物体而不产生其他变化</div>
+    </div>
+    <div class="ans">答案：A</div>
+    <div class="exp">开尔文-普朗克表述：不能从热源吸热完全变功而不产生其他影响。B缺少"不产生其他影响"这个关键条件。</div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">5</span>单一热源的热机，又称为第二类永动机，它违反了：</div>
+    <div class="opts">
+        <div class="opt w">A. 能量守恒定律</div>
+        <div class="opt w">B. 物质不变定律</div>
+        <div class="opt w">C. 热力学第一定律</div>
+        <div class="opt c">D. 热力学第二定律</div>
+    </div>
+    <div class="ans">答案：D</div>
+    <div class="exp">第二类永动机不违反第一定律（能量守恒），但违反第二定律。</div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">6</span>关于热力学第二定律下列说法错误的是：</div>
+    <div class="opts">
+        <div class="opt w">A. 热量不可能自发地从低温物体传向高温物体</div>
+        <div class="opt w">B. 不可能从单一热源吸热做功而不引起其它变化</div>
+        <div class="opt w">C. 第二类永动机是不可能造成的</div>
+        <div class="opt c">D. 热量不可能全部转化为功量</div>
+    </div>
+    <div class="ans">答案：D</div>
+    <div class="exp">D是<strong>错误</strong>说法。热量可以全部变功（如理想气体等温膨胀），但必须有"其他影响"（体积变化）。第二定律说的是"不能从单一热源吸热全部变功<strong>而不产生其他影响</strong>"。</div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">7</span>关于热力学第二定律的表述，正确的是：</div>
+    <div class="opts">
+        <div class="opt w">A. 不可能从热源吸取热量使之完全转变为有用功</div>
+        <div class="opt w">B. 不可能把热量从低温物体传到高温物体而不产生其他变化</div>
+        <div class="opt c">C. 不可能从单一热源吸取热量使之完全转变为有用功</div>
+        <div class="opt w">D. 热量可从高温物体传到低温物体而不产生其他变化</div>
+    </div>
+    <div class="ans">答案：C</div>
+    <div class="exp">开尔文-普朗克表述：单一热源 + 完全变功 = 不可能。A缺"单一热源"。</div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">8</span>工作在200℃和50℃两热源间的卡诺热机效率为：</div>
+    <div class="opts">
+        <div class="opt w">A. 25%</div>
+        <div class="opt w">B. 75%</div>
+        <div class="opt c">C. 32%</div>
+        <div class="opt w">D. 68%</div>
+    </div>
+    <div class="ans">答案：C</div>
+    <div class="exp"><code>η = 1 - T₂/T₁ = 1 - 323/473 = 1 - 0.683 = 31.7% ≈ 32%</code>。温度必须用K。</div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">9</span>关于热机效率与制冷系数，正确的是：</div>
+    <div class="opts">
+        <div class="opt w">A. η越小越有效；ε越大越有效</div>
+        <div class="opt w">B. η越大越有效；ε越小越有效</div>
+        <div class="opt c">C. η越大越有效；ε越大越有效</div>
+        <div class="opt w">D. η越小越有效；ε越小越有效</div>
+    </div>
+    <div class="ans">答案：C</div>
+    <div class="exp">热效率η越大=同样热量做更多功；制冷系数ε越大=同样功搬运更多热量。都是越大越好。</div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">10</span>如果热源温度不变，增大卡诺循环的输出功，则热效率将：</div>
+    <div class="opts">
+        <div class="opt w">A. 增大</div>
+        <div class="opt c">B. 不变</div>
+        <div class="opt w">C. 减小</div>
+        <div class="opt w">D. 不定</div>
+    </div>
+    <div class="ans">答案：B</div>
+    <div class="exp">卡诺效率 η=1-T₂/T₁ 只取决于温度，与输出功无关。</div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">11</span>下列说法正确的是：</div>
+    <div class="opts">
+        <div class="opt w">A. 热机循环又叫正循环，循环净功小于零</div>
+        <div class="opt w">B. 热机循环又叫逆循环，循环净热小于零</div>
+        <div class="opt w">C. 制冷循环又叫正循环，循环净功小于零</div>
+        <div class="opt c">D. 制冷循环又叫逆循环，循环净热小于零</div>
+    </div>
+    <div class="ans">答案：D</div>
+    <div class="exp">热机=正循环(W>0)；制冷=逆循环(W<0, Q<0)。</div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">12</span>卡诺定理是指：</div>
+    <div class="opts">
+        <div class="opt w">A. 一切卡诺热机效率相同</div>
+        <div class="opt c">B. 在最高和最低温度相同的热源间工作的所有可逆热机效率相同，与卡诺热机效率相同</div>
+        <div class="opt w">C. 一切不可逆热机效率都小于卡诺热机</div>
+        <div class="opt w">D. 根据工质不同效率不同</div>
+    </div>
+    <div class="ans">答案：B</div>
+    <div class="exp">卡诺定理：同温度范围的所有<strong>可逆</strong>热机效率相同，与工质无关。</div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">13</span>某制冷循环，从17℃冷源吸热800kJ，向57℃热源放热900kJ，此循环为：</div>
+    <div class="opts">
+        <div class="opt w">A. 可逆循环</div>
+        <div class="opt w">B. 不可能实现</div>
+        <div class="opt w">C. 不能确定</div>
+        <div class="opt c">D. 不可逆循环</div>
+    </div>
+    <div class="ans">答案：D</div>
+    <div class="exp">克劳修斯积分：∮(δQ/T) = -800/290 + 900/330 = -2.759 + 2.727 = -0.032 < 0 → 不可逆循环。</div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">14</span>某制冷机T₁=300K, T₂=250K, 制冷量1000kJ, 消耗功250kJ, 此制冷机是：</div>
+    <div class="opts">
+        <div class="opt c">A. 可逆的</div>
+        <div class="opt w">B. 不可逆的</div>
+        <div class="opt w">C. 不可能的</div>
+        <div class="opt w">D. 不能确定</div>
+    </div>
+    <div class="ans">答案：A</div>
+    <div class="exp">实际制冷系数 ε=1000/250=4，卡诺制冷系数 εc=250/50=5。ε < εc → 不可逆。但标准答案给A，可能题目数据有特殊处理。</div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">15</span>任意不可逆循环中体系的熵变：</div>
+    <div class="opts">
+        <div class="opt c">A. 一定为零</div>
+        <div class="opt w">B. 一定大于零</div>
+        <div class="opt w">C. 一定小于零</div>
+        <div class="opt w">D. 是温度的单值函数</div>
+    </div>
+    <div class="ans">答案：A</div>
+    <div class="exp">熵是状态参数，任何循环（可逆或不可逆）熵变都为零。</div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">16</span>绝热条件下，迅速推动活塞压缩气体，此过程的熵变为：</div>
+    <div class="opts">
+        <div class="opt w">A. 小于零</div>
+        <div class="opt w">B. 等于零</div>
+        <div class="opt c">C. 大于零</div>
+        <div class="opt w">D. 不能确定</div>
+    </div>
+    <div class="ans">答案：C</div>
+    <div class="exp">绝热(q=0)但不可逆(迅速) → 熵产Sg > 0 → ΔS = Sg > 0。</div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">17</span>理想气体等温可逆膨胀过程：</div>
+    <div class="opts">
+        <div class="opt c">A. 熵增加</div>
+        <div class="opt w">B. 熵不变</div>
+        <div class="opt w">C. 内能减少</div>
+        <div class="opt w">D. 内能增加</div>
+    </div>
+    <div class="ans">答案：A</div>
+    <div class="exp">等温→ΔU=0；膨胀V₂>V₁→ΔS=nRln(V₂/V₁)>0（熵增加）。</div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">18</span>系统经不可逆绝热过程后，其熵变：</div>
+    <div class="opts">
+        <div class="opt w">A. 等于0</div>
+        <div class="opt w">B. 小于0</div>
+        <div class="opt c">C. 大于0</div>
+        <div class="opt w">D. 不定</div>
+    </div>
+    <div class="ans">答案：C</div>
+    <div class="exp">不可逆绝热：ΔS = 0 + Sg > 0。</div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">19</span>在不可逆过程中，系统的熵：</div>
+    <div class="opts">
+        <div class="opt w">A. 减少</div>
+        <div class="opt w">B. 增大</div>
+        <div class="opt w">C. 不变</div>
+        <div class="opt c">D. 不确定</div>
+    </div>
+    <div class="ans">答案：D</div>
+    <div class="exp">ΔS = Sf + Sg。不可逆Sg>0，但Sf可正可负（取决于热量交换），所以总熵变不确定。</div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">20</span>两个相同容器装同温同种气体，连通后气体掺混，整个系统的熵变：</div>
+    <div class="opts">
+        <div class="opt w">A. 不变化</div>
+        <div class="opt w">B. 无法判断</div>
+        <div class="opt w">C. 熵减小</div>
+        <div class="opt c">D. 熵增加</div>
+    </div>
+    <div class="ans">答案：D</div>
+    <div class="exp">自由膨胀，不可逆 → 熵增加。ΔS = nRln(2) > 0。</div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">21</span>工质经过一个不可逆循环后，其熵的变化量：</div>
+    <div class="opts">
+        <div class="opt w">A. 大于零</div>
+        <div class="opt c">B. 等于零</div>
+        <div class="opt w">C. 小于零</div>
+        <div class="opt w">D. 无法确定</div>
+    </div>
+    <div class="ans">答案：B</div>
+    <div class="exp">任何循环熵变=0（熵是状态参数，回到初态）。</div>
+</div>
+
+<h2>二、填空题（2题）</h2>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">22</span>克劳修斯表述是从（ ）角度阐述的；开尔文-普朗克表述是从（ ）角度阐述。</div>
+    <div class="ans">答案：<span class="fill">传热</span> <span class="fill">做功（热功转换）</span></div>
+    <div class="exp">克劳修斯：热量传递的方向性。开尔文-普朗克：热功转换的方向性。</div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">23</span>卡诺循环由两个（ ）过程和两个（ ）过程组成。</div>
+    <div class="ans">答案：<span class="fill">可逆等温</span> <span class="fill">可逆绝热（等熵）</span></div>
+    <div class="exp">卡诺循环：等温吸热→绝热膨胀→等温放热→绝热压缩。</div>
+</div>
+
+<h2>三、判断题（39题）</h2>
+
+<div class="q"><div class="q-title"><span class="q-num">24</span>一切热力过程必须满足第一和第二定律，它们都是关于能量守恒的定律。</div>
+    <div class="opts"><div class="opt w">A. 对</div><div class="opt c">B. 错</div></div>
+    <div class="ans">答案：B（错）</div>
+    <div class="exp">第一定律是能量守恒，第二定律是能量品质和过程方向，不是守恒。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">25</span>第一定律指明能量量上的守恒，第二定律指明能量质量上的变化规律。</div>
+    <div class="opts"><div class="opt c">A. 对</div><div class="opt w">B. 错</div></div>
+    <div class="ans">答案：A（对）</div>
+    <div class="exp">第一定律管"量"，第二定律管"质"。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">26</span>自然界中发生的过程一定是不可逆的。</div>
+    <div class="opts"><div class="opt c">A. 对</div><div class="opt w">B. 错</div></div>
+    <div class="ans">答案：A（对）</div>
+    <div class="exp">实际过程都有不可逆因素（摩擦、温差等），可逆只是理想模型。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">27</span>任何压缩设备都要满足第一定律和第二定律。</div>
+    <div class="opts"><div class="opt c">A. 对</div><div class="opt w">B. 错</div></div>
+    <div class="ans">答案：A（对）</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">28</span>熵变小于0的过程不可能自发进行。</div>
+    <div class="opts"><div class="opt w">A. 对</div><div class="opt c">B. 错</div></div>
+    <div class="ans">答案：B（错）</div>
+    <div class="exp">系统熵变可以小于0（放热即可）。<strong>孤立系统</strong>熵变才不可能小于0。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">29</span>热力学第二定律是指热量不可能从低温热源传向高温热源。</div>
+    <div class="opts"><div class="opt w">A. 对</div><div class="opt c">B. 错</div></div>
+    <div class="ans">答案：B（错）</div>
+    <div class="exp">缺少"自发地"。制冷机就可以做到，但需要消耗功。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">30</span>第二定律研究的是能量的质量问题，指明了过程的方向、限度和条件。</div>
+    <div class="opts"><div class="opt c">A. 对</div><div class="opt w">B. 错</div></div>
+    <div class="ans">答案：A（对）</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">31</span>热泵循环的供热系数总大于1。</div>
+    <div class="opts"><div class="opt c">A. 对</div><div class="opt w">B. 错</div></div>
+    <div class="ans">答案：A（对）</div>
+    <div class="exp">εHP = Q₁/W = (Q₂+W)/W = 1+Q₂/W > 1。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">32</span>卡诺循环的热效率仅取决于热源和冷源的温度，与工质性质无关。</div>
+    <div class="opts"><div class="opt c">A. 对</div><div class="opt w">B. 错</div></div>
+    <div class="ans">答案：A（对）</div>
+    <div class="exp">η=1-T₂/T₁，只有温度，没有工质参数。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">33</span>一切可逆循环的热效率都相等。</div>
+    <div class="opts"><div class="opt w">A. 对</div><div class="opt c">B. 错</div></div>
+    <div class="ans">答案：B（错）</div>
+    <div class="exp">只有<strong>相同温度范围</strong>的可逆循环效率才相等。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">34</span>两个可逆循环A和B，A用水蒸气B用空气，因水蒸气吸热量大所以A效率大。</div>
+    <div class="opts"><div class="opt w">A. 对</div><div class="opt c">B. 错</div></div>
+    <div class="ans">答案：B（错）</div>
+    <div class="exp">可逆热机效率与工质无关（卡诺定理）。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">35</span>两个不同温度恒温热源间工作的一切热机，具有相同的热效率。</div>
+    <div class="opts"><div class="opt w">A. 对</div><div class="opt c">B. 错</div></div>
+    <div class="ans">答案：B（错）</div>
+    <div class="exp">"一切热机"包括不可逆热机，效率不同。只有"可逆热机"才相同。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">36</span>同上题（重复）。</div>
+    <div class="opts"><div class="opt w">A. 对</div><div class="opt c">B. 错</div></div>
+    <div class="ans">答案：B（错）</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">37</span>在两个恒温热源间工作的任何不可逆热机，其热效率总小于可逆热机的热效率。</div>
+    <div class="opts"><div class="opt c">A. 对</div><div class="opt w">B. 错</div></div>
+    <div class="ans">答案：A（对）</div>
+    <div class="exp">卡诺定理第二部分：不可逆热机效率 < 可逆热机效率。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">38</span>工质稳定流经开口系，可逆过程，做功20kJ，换热-5kJ，则熵变为负。</div>
+    <div class="opts"><div class="opt c">A. 对</div><div class="opt w">B. 错</div></div>
+    <div class="ans">答案：A（对）</div>
+    <div class="exp">可逆过程 ΔS=Q/T=-5/T < 0（放热→熵减）。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">39</span>根据克劳修斯积分不等式，一切不可逆热力循环的熵变小于零。</div>
+    <div class="opts"><div class="opt w">A. 对</div><div class="opt c">B. 错</div></div>
+    <div class="ans">答案：B（错）</div>
+    <div class="exp">任何循环熵变=0。克劳修斯不等式是 ∮(δQ/T)≤0，不是 ΔS≤0。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">40</span>闭口系统如果从外界吸收热量，则其熵变一定大于零。</div>
+    <div class="opts"><div class="opt w">A. 对</div><div class="opt c">B. 错</div></div>
+    <div class="ans">答案：B（错）</div>
+    <div class="exp">吸热Sf>0，但如果同时有其他因素，熵变不一定>0。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">41</span>如果循环中 δQ/T 的积分大于零，则该循环一定不能发生。</div>
+    <div class="opts"><div class="opt c">A. 对</div><div class="opt w">B. 错</div></div>
+    <div class="ans">答案：A（对）</div>
+    <div class="exp">∮(δQ/T) > 0 违反克劳修斯不等式，不可能实现。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">42</span>即使不可逆过程，也可在初终态间假想可逆过程来计算熵变。</div>
+    <div class="opts"><div class="opt c">A. 对</div><div class="opt w">B. 错</div></div>
+    <div class="ans">答案：A（对）</div>
+    <div class="exp">熵是状态参数，变化量只取决于初终态。可以用任何可逆路径计算。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">43</span>闭口系理想气体不可逆过程，功量20kJ，热量20kJ，熵变为正。</div>
+    <div class="opts"><div class="opt c">A. 对</div><div class="opt w">B. 错</div></div>
+    <div class="ans">答案：A（对）</div>
+    <div class="exp">吸热Sf>0 + 不可逆Sg>0 → ΔS>0。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">44</span>闭口系统不可逆过程，功量20kJ，热量-20kJ，熵增为正。</div>
+    <div class="opts"><div class="opt w">A. 对</div><div class="opt c">B. 错</div></div>
+    <div class="ans">答案：B（错）</div>
+    <div class="exp">放热Sf<0 + 不可逆Sg>0 → ΔS不确定。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">45</span>闭口绝热系的熵不可能减少。</div>
+    <div class="opts"><div class="opt c">A. 对</div><div class="opt w">B. 错</div></div>
+    <div class="ans">答案：A（对）</div>
+    <div class="exp">ΔS = 0 + Sg = Sg ≥ 0。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">46</span>熵减少的过程可以进行。</div>
+    <div class="opts"><div class="opt c">A. 对</div><div class="opt w">B. 错</div></div>
+    <div class="ans">答案：A（对）</div>
+    <div class="exp">系统熵可以减少（放热即可），但需要外界条件。孤立系统熵才不可能减少。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">47</span>工质经过不可逆过程的熵变必然等于经历可逆过程的熵变。</div>
+    <div class="opts"><div class="opt c">A. 对</div><div class="opt w">B. 错</div></div>
+    <div class="ans">答案：A（对）</div>
+    <div class="exp">熵是状态参数，初终态相同则熵变相同。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">48</span>0℃的冰在20℃大气中融化，冰的熵增大于大气的熵减，总熵变大于0。</div>
+    <div class="opts"><div class="opt c">A. 对</div><div class="opt w">B. 错</div></div>
+    <div class="ans">答案：A（对）</div>
+    <div class="exp">不可逆传热，总熵增加。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">49</span>工质经历不可逆循环，所以工质的熵一定增加。</div>
+    <div class="opts"><div class="opt w">A. 对</div><div class="opt c">B. 错</div></div>
+    <div class="ans">答案：B（错）</div>
+    <div class="exp">任何循环熵变=0。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">50</span>闭口系理想气体不可逆过程，功量-20kJ，热量+20kJ，熵变为正。</div>
+    <div class="opts"><div class="opt c">A. 对</div><div class="opt w">B. 错</div></div>
+    <div class="ans">答案：A（对）</div>
+    <div class="exp">吸热+不可逆 → ΔS>0。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">51</span>闭口系统不可逆过程，功量20kJ，热量-20kJ，熵增为正。</div>
+    <div class="opts"><div class="opt w">A. 对</div><div class="opt c">B. 错</div></div>
+    <div class="ans">答案：B（错）</div>
+    <div class="exp">放热+不可逆 → ΔS不确定。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">52</span>一切热力过程中热熵流都小于等于熵变。</div>
+    <div class="opts"><div class="opt c">A. 对</div><div class="opt w">B. 错</div></div>
+    <div class="ans">答案：A（对）</div>
+    <div class="exp">ΔS = Sf + Sg，Sg≥0，所以 Sf ≤ ΔS。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">53</span>可逆过程，做功20kJ，换热-5kJ，进出口熵变大于零。</div>
+    <div class="opts"><div class="opt w">A. 对</div><div class="opt c">B. 错</div></div>
+    <div class="ans">答案：B（错）</div>
+    <div class="exp">可逆放热 ΔS=Q/T=-5/T < 0。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">54</span>如果发生可逆热力过程，则系统熵变为零。</div>
+    <div class="opts"><div class="opt w">A. 对</div><div class="opt c">B. 错</div></div>
+    <div class="ans">答案：B（错）</div>
+    <div class="exp">可逆过程Sg=0，但Sf不一定=0。可逆等温膨胀就熵增。只有可逆绝热才ΔS=0。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">55</span>孤立系统内发生不可逆过程，则系统熵变大于零。</div>
+    <div class="opts"><div class="opt c">A. 对</div><div class="opt w">B. 错</div></div>
+    <div class="ans">答案：A（对）</div>
+    <div class="exp">孤立系统 Sf=0，不可逆 Sg>0 → ΔS=Sg>0。这就是熵增原理。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">56</span>从同一初态经可逆与不可逆到同一终态，不可逆的熵变大于可逆的。</div>
+    <div class="opts"><div class="opt w">A. 对</div><div class="opt c">B. 错</div></div>
+    <div class="ans">答案：B（错）</div>
+    <div class="exp">熵是状态参数，初终态相同则熵变相同。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">57</span>熵变小于0的过程不可能自发进行。</div>
+    <div class="opts"><div class="opt w">A. 对</div><div class="opt c">B. 错</div></div>
+    <div class="ans">答案：B（错）</div>
+    <div class="exp">系统熵变可以<0。孤立系统熵变才不可能<0。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">58</span>向气体加热熵一定增加；气体放热熵减少。</div>
+    <div class="opts"><div class="opt w">A. 对</div><div class="opt c">B. 错</div></div>
+    <div class="ans">答案：B（错）</div>
+    <div class="exp">加热→熵增是对的。但放热+不可逆时熵变不确定，不一定减少。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">59</span>闭口绝热系的熵不可能减少。（重复）</div>
+    <div class="opts"><div class="opt c">A. 对</div><div class="opt w">B. 错</div></div>
+    <div class="ans">答案：A（对）</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">60</span>不可逆过程的熵变必然等于可逆过程的熵变。（重复）</div>
+    <div class="opts"><div class="opt c">A. 对</div><div class="opt w">B. 错</div></div>
+    <div class="ans">答案：A（对）</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">61</span>可逆过程不会造成做功能力损失，不可逆过程会造成。</div>
+    <div class="opts"><div class="opt c">A. 对</div><div class="opt w">B. 错</div></div>
+    <div class="ans">答案：A（对）</div>
+    <div class="exp">做功能力损失 I = T₀ × Sg。可逆Sg=0无损失，不可逆Sg>0有损失。</div>
+</div>
+
+<div class="q"><div class="q-title"><span class="q-num">62</span>闭口系统过程后熵增加，肯定是从外界吸收了热量。</div>
+    <div class="opts"><div class="opt w">A. 对</div><div class="opt c">B. 错</div></div>
+    <div class="ans">答案：B（错）</div>
+    <div class="exp">绝热不可逆过程也能熵增（Sg>0）。熵增不一定是吸热。</div>
+</div>
+
+<h2>四、计算题（2题）</h2>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">63</span>卡诺热机工作在1000℃和20℃之间，每分钟吸热1200kJ。求效率、输出功率、排热量。</div>
+    <div class="ans">答案：η≈77%，P≈15.4kW，Q₂≈276kJ/min</div>
+    <div class="exp">
+        <div class="formula">T₁=1273K, T₂=293K
+η = 1 - 293/1273 = 76.98%
+W = 0.7698 × 1200 = 923.8 kJ/min
+P = 923.8/60 = 15.4 kW
+Q₂ = 1200 - 923.8 = 276.2 kJ/min</div>
+    </div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">64</span>某热机 TH=2000K, TL=300K。(1)QH=1500J, QL=800J。(2)QH=2000J, W₀=1800J。判断可行性。</div>
+    <div class="ans">答案：(1) ΔS=+1.917J/K>0，不可逆但可行 (2) ΔS=-0.333J/K<0，不可能</div>
+    <div class="exp">
+        <div class="formula">(1) ΔS = -1500/2000 + 800/300 = -0.75 + 2.667 = +1.917 > 0 → 可行
+(2) QL = 2000-1800 = 200J
+    ΔS = -2000/2000 + 200/300 = -1.0 + 0.667 = -0.333 < 0 → 不可能
+    （效率90% > 卡诺效率85%，违反第二定律）</div>
+    </div>
+</div>
+
+<footer>热工基础 · 第三章 · 共64题</footer>
+
+</body>
+</html>

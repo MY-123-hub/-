@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第二章 热力学第一定律 - 详细解析</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #fff; color: #222; line-height: 1.9; max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        h1 { font-size: 1.8em; border-bottom: 2px solid #222; padding-bottom: 10px; margin-bottom: 30px; }
+        h2 { font-size: 1.3em; color: #555; border-bottom: 1px solid #ddd; padding-bottom: 6px; margin: 30px 0 20px; }
+        .q { margin-bottom: 36px; }
+        .q-title { font-weight: 700; font-size: 1.05em; margin-bottom: 10px; }
+        .q-num { display: inline-block; width: 24px; height: 24px; background: #222; color: #fff; text-align: center; line-height: 24px; border-radius: 3px; font-size: 0.8em; margin-right: 8px; }
+        .opts { margin: 8px 0 12px 24px; }
+        .opt { padding: 4px 0; }
+        .opt.c { color: #1a7f37; font-weight: 700; }
+        .opt.c::before { content: "✓ "; }
+        .opt.w { color: #999; }
+        .ans { background: #f6f6f6; border-left: 3px solid #222; padding: 10px 14px; margin: 10px 0; font-weight: 700; }
+        .exp { color: #444; margin: 10px 0; padding-left: 14px; border-left: 2px solid #ddd; }
+        .exp p { margin: 8px 0; }
+        .exp strong { color: #222; }
+        .exp code { background: #f0f0f0; padding: 2px 6px; border-radius: 3px; }
+        .box { background: #f6f6f6; padding: 12px 14px; margin: 10px 0; border-radius: 4px; }
+        .box-key { border-left: 3px solid #d00; }
+        table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 0.95em; }
+        th, td { border: 1px solid #ddd; padding: 8px 10px; text-align: left; }
+        th { background: #f6f6f6; font-weight: 700; }
+        footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; color: #999; font-size: 0.85em; }
+    </style>
+</head>
+<body>
+
+<h1>第二章 热力学第一定律 详细解析</h1>
+
+<h2>一、多选题</h2>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">1</span>体积变化功包括哪些形式的功？</div>
+    <div class="opts">
+        <div class="opt c">A. 膨胀功</div>
+        <div class="opt c">B. 压缩功</div>
+        <div class="opt c">C. 容积变化功</div>
+        <div class="opt w">D. 表面张力功</div>
+    </div>
+    <div class="ans">答案：A、B、C</div>
+    <div class="exp">
+        <p>体积变化功是通过体积膨胀或压缩实现的功，公式 <code>W = ∫pdV</code>。膨胀功和压缩功是它的两种形式，容积变化功是同义词。表面张力功与体积无关。</p>
+    </div>
+</div>
+
+<h2>二、单选题</h2>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">2</span>"技术功"中技术的含义是：</div>
+    <div class="opts">
+        <div class="opt c">A. 技术上可以利用</div>
+        <div class="opt w">B. 属于工程技术</div>
+        <div class="opt w">C. 做功依赖于技术</div>
+        <div class="opt w">D. 需要技术才能用</div>
+    </div>
+    <div class="ans">答案：A</div>
+    <div class="exp">
+        <p>技术功 = 可以通过技术手段（涡轮机等）提取出来做有用功的部分。"推动功"pv不能被利用，所以不算技术功。</p>
+    </div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">3</span>膨胀功、技术功、轴功三者的数值关系是：</div>
+    <div class="opts">
+        <div class="opt c">A. 膨胀功≥技术功≥轴功</div>
+        <div class="opt w">B. 三者数值大小关系不确定。</div>
+        <div class="opt w">C. 技术功≥膨胀功≥轴功</div>
+        <div class="opt w">D. 膨胀功>技术功>轴功</div>
+    </div>
+    <div class="ans">答案：A</div>
+    <div class="exp">
+        <p>关系：<code>w(膨胀) = w_t(技术) + Δ(pv)</code>，<code>w_t = w_s(轴) + Δ(½c²) + gΔz</code>。每一步都减去一些"不可利用"的部分，所以膨胀功≥技术功≥轴功。用≥是因为特殊情况下三者可相等。</p>
+    </div>
+</div>
+
+<h2>三、判断题</h2>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">4</span>热力学能是状态参数。</div>
+    <div class="opts">
+        <div class="opt c">A. 对</div>
+        <div class="opt w">B. 错</div>
+    </div>
+    <div class="ans">答案：A（对）</div>
+    <div class="exp">
+        <p>热力学能（内能）是状态参数，只取决于系统当前状态。对于理想气体，内能只是温度的函数 U=U(T)。</p>
+    </div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">5</span>泵和风机内流体被绝热压缩时，稳定流动方程可简化为 ws=h2-h1。</div>
+    <div class="opts">
+        <div class="opt c">A. 对</div>
+        <div class="opt w">B. 错</div>
+    </div>
+    <div class="ans">答案：A（对）</div>
+    <div class="exp">
+        <p>泵和风机：绝热(q=0)，流速和高度变化可忽略。代入方程得 <code>w_s = h₂ - h₁</code>（消耗功=焓增）。</p>
+    </div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">6</span>稳定流动系统的能量方程 q = Δh + w_t，仅适用于采用理想气体为工质的不可逆过程。</div>
+    <div class="opts">
+        <div class="opt w">A. 对</div>
+        <div class="opt c">B. 错</div>
+    </div>
+    <div class="ans">答案：B（错）</div>
+    <div class="exp">
+        <p>这个方程是普遍适用的能量守恒方程，不限工质类型，不限过程可逆性。只要是稳定流动就能用。</p>
+    </div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">7</span>稳定流动能量方程应用于水泵时可简化为 q=h2-h1，应用于冷却器时可简化为 q=h2-h1。</div>
+    <div class="opts">
+        <div class="opt w">A. 对</div>
+        <div class="opt c">B. 错</div>
+    </div>
+    <div class="ans">答案：B（错）</div>
+    <div class="exp">
+        <p>水泵是绝热的(q=0)，正确简化是 <code>w_s = h₂ - h₁</code>，不是 q=h₂-h₁。冷却器简化为 q=h₂-h₁ 是对的。题目前半句错了。</p>
+    </div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">8</span>稳定流动能量方程应用于绝热节流时可简化为 h₁=h₂，应用于涡轮机时可简化为 w_s=h₁-h₂。</div>
+    <div class="opts">
+        <div class="opt c">A. 对</div>
+        <div class="opt w">B. 错</div>
+    </div>
+    <div class="ans">答案：A（对）</div>
+    <div class="exp">
+        <p>绝热节流：q=0, w_s=0 → h₁=h₂（等焓过程）。涡轮机：q=0 → w_s=h₁-h₂（焓降=输出功）。</p>
+    </div>
+</div>
+
+<h2>四、简答题</h2>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">9</span>绝热节流前后，工质的（ ）保持不变。</div>
+    <div class="ans">答案：焓（h）</div>
+    <div class="exp">
+        <p>绝热节流：q=0, w_s=0 → 0 = Δh → h₁=h₂。这是等焓过程。注意压力会降低，不是等压过程。</p>
+    </div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">10</span>请写出稳定流动的能量方程。</div>
+    <div class="ans">答案：q = (h₂-h₁) + ½(c₂²-c₁²) + g(z₂-z₁) + w_s</div>
+    <div class="exp">
+        <p>各项含义：q=热量，Δh=焓变，½Δc²=动能变化，gΔz=势能变化，w_s=轴功。这是能量守恒在开口系统中的表达。</p>
+        <p>常见简化：涡轮机 w_s=h₁-h₂；水泵 w_s=h₂-h₁；换热器 q=h₂-h₁；节流 h₁=h₂；喷管 ½(c₂²-c₁²)=h₁-h₂。</p>
+    </div>
+</div>
+
+<footer>热工基础 · 第二章 · 共10题</footer>
+
+</body>
+</html>

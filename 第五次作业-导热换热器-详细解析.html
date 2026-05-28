@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第五次作业 导热与换热器 - 详细解析</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; background: #fff; color: #222; line-height: 1.9; max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        h1 { font-size: 1.8em; border-bottom: 2px solid #222; padding-bottom: 10px; margin-bottom: 30px; }
+        .q { margin-bottom: 36px; }
+        .q-title { font-weight: 700; font-size: 1.05em; margin-bottom: 10px; }
+        .q-num { display: inline-block; min-width: 24px; height: 24px; background: #222; color: #fff; text-align: center; line-height: 24px; border-radius: 3px; font-size: 0.8em; margin-right: 8px; }
+        .ans { background: #f6f6f6; border-left: 3px solid #222; padding: 10px 14px; margin: 10px 0; font-weight: 700; }
+        .exp { color: #444; margin: 10px 0; padding-left: 14px; border-left: 2px solid #ddd; }
+        .exp p { margin: 8px 0; }
+        .exp strong { color: #222; }
+        .exp code { background: #f0f0f0; padding: 2px 6px; border-radius: 3px; }
+        .box { background: #f6f6f6; padding: 12px 14px; margin: 10px 0; border-radius: 4px; }
+        .box-key { border-left: 3px solid #d00; }
+        .formula { background: #f0f0f0; padding: 10px 14px; margin: 8px 0; border-radius: 4px; font-family: monospace; font-size: 0.95em; }
+        footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #ddd; color: #999; font-size: 0.85em; }
+    </style>
+</head>
+<body>
+
+<h1>第五次作业 导热与换热器 详细解析</h1>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">1</span>钢制热风管，内径160mm，外径170mm，λ₁=58.2W/(m·K)。外包两层保温：内层δ₂=30mm，λ₂=0.135；外层δ₃=80mm，λ₃=0.0932。内表面300℃，外表面50℃。求热损失和各界面温度。</div>
+    <div class="ans">答案：热损失 ≈ 198.6 W/m，钢管外壁≈300°C，保温层界面≈229°C</div>
+    <div class="exp">
+        <p><strong>几何参数：</strong>r₁=80mm, r₂=85mm, r₃=115mm, r₄=195mm</p>
+        <div class="formula">各层热阻（单位管长）：
+R₁ = ln(85/80)/(2π×58.2) = 1.657×10⁻⁴ m·K/W（钢管，极小）
+R₂ = ln(115/85)/(2π×0.135) = 0.3563 m·K/W（保温内层）
+R₃ = ln(195/115)/(2π×0.0932) = 0.9022 m·K/W（保温外层）
+R_总 = 1.2587 m·K/W
+
+热损失：q = (300-50)/1.2587 = 198.6 W/m
+
+界面温度：
+t₂ = 300 - 198.6×1.657×10⁻⁴ = 299.97°C（钢管热阻极小，温度几乎不变）
+t₃ = 299.97 - 198.6×0.3563 = 229.2°C</div>
+        <div class="box box-key">圆筒壁热阻公式：R = ln(r₂/r₁)/(2πλ)。多层串联：总热阻=各层之和。钢管热阻极小可忽略。</div>
+    </div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">2</span>平面墙厚20mm，λ=1.3。外覆保温层λ=0.1。两侧温度750°C和55°C，热损失不超过1500W/m²。求保温层厚度。</div>
+    <div class="ans">答案：保温层厚度至少约 45 mm</div>
+    <div class="exp">
+        <div class="formula">q = ΔT / (δ₁/λ₁ + δ₂/λ₂)
+1500 ≥ (750-55) / (0.02/1.3 + δ₂/0.1)
+1500 ≥ 695 / (0.01538 + δ₂/0.1)
+0.01538 + δ₂/0.1 ≥ 0.4633
+δ₂/0.1 ≥ 0.4479
+δ₂ ≥ 0.04479 m ≈ 45 mm</div>
+        <div class="box box-key">平壁复合壁：总热阻 = δ₁/λ₁ + δ₂/λ₂。热阻越大热流越小。保温层λ小，是主要热阻。</div>
+    </div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">3</span>锅炉锅筒，壁厚20mm，外径0.6m，λ=58。烟气1000°C，水200°C。h₁=116，h₂=2326。求热流密度和外壁温度。</div>
+    <div class="ans">答案：热流密度 ≈ 85.1 kW/m²，外壁温 ≈ 266°C</div>
+    <div class="exp">
+        <div class="formula">总热阻：R = 1/h₁ + δ/λ + 1/h₂
+= 1/116 + 0.02/58 + 1/2326
+= 0.008621 + 0.000345 + 0.000430
+= 0.009396 m²·K/W
+
+热流密度：q = (1000-200)/0.009396 = 85,120 W/m² = 85.1 kW/m²
+
+外壁温度：t_w = 1000 - 85120/116 = 1000 - 733.8 = 266.2°C</div>
+        <div class="box box-key">传热过程：对流+导热+对流，三个热阻串联。烟气侧h₁小，是控制热阻（瓶颈）。</div>
+    </div>
+</div>
+
+<div class="q">
+    <div class="q-title"><span class="q-num">4</span>蒸汽管道内外径200mm和216mm，外包120mm保温层λ=0.1。蒸汽300°C，空气25°C。h₁=516，h₂=9.9，钢管λ=46.5。求单位管长热损失和内外表面温度。</div>
+    <div class="ans">答案：热损失 ≈ 217.7 W/m，内壁≈299°C，外壁≈40°C</div>
+    <div class="exp">
+        <p><strong>几何：</strong>r₁=0.1m, r₂=0.108m, r₃=0.228m</p>
+        <div class="formula">各部分热阻：
+R₁ = 1/(2πr₁h₁) = 1/(2π×0.1×516) = 0.003084 m·K/W（内侧对流）
+R₂ = ln(0.108/0.1)/(2π×46.5) = 0.000263 m·K/W（钢管导热，极小）
+R₃ = ln(0.228/0.108)/(2π×0.1) = 1.1895 m·K/W（保温层，占94%！）
+R₄ = 1/(2π×0.228×9.9) = 0.07067 m·K/W（外侧对流）
+
+R_总 = 1.2635 m·K/W
+
+热损失：q = (300-25)/1.2635 = 217.7 W/m
+
+内壁温：t_w1 = 300 - 217.7×0.003084 = 299.3°C
+外壁温：t_w4 = 25 + 217.7×0.07067 = 40.4°C</div>
+        <div class="box box-key">保温层热阻占总热阻94%，是决定性因素。钢管热阻几乎为零。内壁温≈蒸汽温度，外壁温接近空气温度。</div>
+    </div>
+</div>
+
+<footer>热工基础 · 第五次作业 · 共4题</footer>
+
+</body>
+</html>
